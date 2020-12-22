@@ -32,13 +32,13 @@
             Choose your gender:
         </label>
         <br/>
-        <input type="radio" name="male" name="gender" value="male">
+        <input type="radio" name="gender" name="gender" value="Male">
         <label for="male"> Male </label> 
         <br/>
-        <input type="radio" name="female" name="gender" value="female">
+        <input type="radio" name="gender" name="gender" value="Female">
         <label for="female"> Female </label> 
         <br/>
-        <input type="radio" name="other" name="gender" value="other">
+        <input type="radio" name="gender" name="gender" value="Other">
         <label for="other"> Other </label> 
         <br/>
         <br/>
@@ -46,13 +46,13 @@
             Choose your preferred gender:
         </label>
         <br/>
-        <input type="radio" name="prefermale" name="preferredgender" value="male">
+        <input type="radio" name="preferredgender" name="preferredgender" value="Male">
         <label for="male"> Male </label> 
         <br/>
-        <input type="radio" name="preferfemale" name="preferredgender" value="female">
+        <input type="radio" name="preferredgender" name="preferredgender" value="Female">
         <label for="female"> Female </label> 
         <br/>
-        <input type="radio" name="preferother" name="preferredgender" value="other">
+        <input type="radio" name="preferredgender" name="preferredgender" value="Other">
         <label for="other"> Other </label> 
         <br/>
         <br/>
@@ -60,10 +60,17 @@
     </form>
 
     <?php 
-    if (isset($_POST["firstname"])) {
+    include_once "./Includes/database.php";
+
+    if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["age"]) && isset($_POST["gender"]) &&  isset($_POST["preferredgender"])) {
         $firstname = $_POST["firstname"];
+        $lastname = $_POST["lastname"];
+        $age = $_POST["age"];
+        $gender = $_POST["gender"];
+        $preferredgender = $_POST["preferredgender"];
     }
-    var_dump($firstname);
+    
+    InsertQuery("INSERT INTO Person (person_firstname, person_lastname, person_age, person_gender, person_preferred_gender) VALUES ('$firstname', '$lastname', '$age', '$gender', '$preferredgender')");
     ?>
 </body>
 </html>
