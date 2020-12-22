@@ -15,9 +15,11 @@
 
     foreach ($people as $person) {
     ?>
+    <div class="firstname">
     <h2>
         <?php echo $person["person_firstname"]; ?>
     </h2>
+    </div>
     <?php } 
     ?>
 </body>

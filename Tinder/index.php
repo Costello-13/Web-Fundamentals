@@ -60,7 +60,7 @@
     </form>
 
     <?php 
-    include_once "./Includes/database.php";
+    include "./Includes/database.php";
 
     if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["age"]) && isset($_POST["gender"]) &&  isset($_POST["preferredgender"])) {
         $firstname = $_POST["firstname"];

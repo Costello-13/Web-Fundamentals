@@ -29,12 +29,6 @@ $result = mysqli_query($connection, $sql);
 return $result->fetch_all(MYSQLI_ASSOC);
 }
 
-$people = GetQuery("SELECT * FROM Person"); 
-
-foreach ($people as $person) {
-    echo $person["person_firstname"] . "<br/>";
-}
-
 function InsertQuery($sqlquery) {
     $connection = dbconnection();
 
