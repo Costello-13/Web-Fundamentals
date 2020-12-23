@@ -20,8 +20,24 @@ var index = 0;
 
 
 document.querySelector("#swipebuttons").addEventListener("click", function() {
-    document.querySelectorAll(".jsswipe")[index].style.display = "none";
+    var peoplelength = document.querySelectorAll(".jsfirstname").length;
+
+    document.querySelectorAll(".jsfirstname")[index].style.display = "none";
+    document.querySelectorAll(".jsage")[index].style.display = "none";
+    document.querySelectorAll(".jsgender")[index].style.display = "none";
+    document.querySelectorAll(".jsprefgender")[index].style.display = "none";
 
     index++;
-    document.querySelectorAll(".jsswipe")[index].style.display = "block";
+
+    if (index >= peoplelength) {
+        index = 0;
+    }
+    document.querySelectorAll(".jsfirstname")[index].style.display = "block";
+    document.querySelectorAll(".jsage")[index].style.display = "block";
+    document.querySelectorAll(".jsgender")[index].style.display = "block";
+    document.querySelectorAll(".jsprefgender")[index].style.display = "block";
 });
+
+
+
+

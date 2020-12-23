@@ -45,12 +45,12 @@
     
     <!-- Swipe buttons -->
     <div id="swipebuttons">
-        <a href="" class="swiped" id="dislike">
+        <button class="swiped" id="dislike">
             No thanks.
-        </a>
-        <a href="" class="swiped">
+        </button>
+        <button class="swiped" id="like">
             Yes please!
-        </a>
+        </button>
     </div>
 
     <!-- Footer -->
