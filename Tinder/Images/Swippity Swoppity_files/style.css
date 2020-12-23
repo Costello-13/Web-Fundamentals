@@ -106,34 +106,22 @@ input[type=submit] {
     width: 210px;
 }
 
+.jsswipe {
+    display: none;
+}
+.jsvisible {
+    display: block;
+}
+
 #containerswipe {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
 }
+
 #swipebuttons {
-    display: flex;
+    box-sizing: border-box;
+    border: 1px solid black;
     justify-content: space-evenly;
-}
-.swiped {
-text-align: center;
-background-color: pink;
-color: black;
-border: 1px solid black;
-font-family:'Times New Roman', Times, serif;
-box-sizing: border-box;
-width: 250px;
-padding: 15px;
 
-}
-
-.firstname {
-    font-family: 'Times New Roman', Times, serif;
-    color: pink;
-}
-.jsswipe {
-    display: none;
-}
-.jsvisible {
-    display:block;
 }

@@ -24,7 +24,7 @@
         <a href="./Account.php" id="createacc">
         Create Account
         </a>
-        <a href="" id="startswipe">
+        <a href="./swiping.php" id="startswipe">
         Start Swiping
         </a>
     </div>

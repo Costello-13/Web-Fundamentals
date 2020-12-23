@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Swippity Swoppity</title>
+    <link  rel="stylesheet" href="./styling/style.css" type="text/css">
 </head>
 <body>
-    <p>Test</p>
+    <!-- Header -->
+    <?php 
+    include "./Includes/Header.php"; ?>
+
+    <!-- Database input -->
     <?php 
     
     include "./Includes/database.php";
@@ -15,12 +20,43 @@
 
     foreach ($people as $person) {
     ?>
-    <div class="firstname">
-    <h2>
+    <!-- Database content -->
+    <div id="containerswipe" class="js-swipe">
+    <h1 class="jsfirstname jsswipe">
         <?php echo $person["person_firstname"]; ?>
+    </h1>
+   
+    <h2 class="jsage jsswipe">
+        <?php echo $person["person_age"] . " " ."years old"; ?>
     </h2>
-    </div>
+    <h2 class="jsgender jsswipe">
+        <?php echo "Gender: " . $person["person_gender"]; ?>
+    </h2>
+    <h2 class="jsprefgender jsswipe">
+        <?php echo "Preferred gender: " . $person["person_preferred_gender"]; ?>
+    </h2>
+    
     <?php } 
     ?>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    
+    <!-- Swipe buttons -->
+    <div id="swipebuttons">
+        <a href="" class="swiped" id="dislike">
+            No thanks.
+        </a>
+        <a href="" class="swiped">
+            Yes please!
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <?php 
+    include "./Includes/Footer.php"?>
+
+    <script src="./Assets/index.js"> </script>
 </body>
 </html>

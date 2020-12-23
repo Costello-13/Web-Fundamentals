@@ -55,20 +55,6 @@
     </form>
     </div>
     <?php 
-    include "./Includes/database.php";
-
-    if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["age"]) && isset($_POST["gender"]) &&  isset($_POST["preferredgender"])) {
-        $firstname = $_POST["firstname"];
-        $lastname = $_POST["lastname"];
-        $age = $_POST["age"];
-        $gender = $_POST["gender"];
-        $preferredgender = $_POST["preferredgender"];
-    }
-    
-    InsertQuery("INSERT INTO Person (person_firstname, person_lastname, person_age, person_gender, person_preferred_gender) VALUES ('$firstname', '$lastname', '$age', '$gender', '$preferredgender')");
-    ?>
-    
-    <?php 
     include "./Includes/Footer.php"; ?>
 </div>
 </body>
