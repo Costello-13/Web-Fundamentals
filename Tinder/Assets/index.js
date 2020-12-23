@@ -30,7 +30,7 @@ document.querySelector("#swipebuttons").addEventListener("click", function() {
     index++;
 
     if (index >= peoplelength) {
-        index = 0;
+       window.location.href="./Finished.php";
     }
     document.querySelectorAll(".jsfirstname")[index].style.display = "block";
     document.querySelectorAll(".jsage")[index].style.display = "block";

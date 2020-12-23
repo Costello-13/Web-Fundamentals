@@ -137,3 +137,15 @@ padding: 15px;
 .jsvisible {
     display:block;
 }
+
+.container-rated {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid pink;
+}
+
+#rated {
+    font-family: 'Times New Roman', Times, serif;
+
+}
