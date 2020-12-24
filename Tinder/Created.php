@@ -30,7 +30,7 @@
     <br/>
     <br/>
     <div class="buttons">
-    <a href="" id="startswipe">
+    <a href="./login.php" id="startswipe">
         Start Swiping
     </a>
     </div>
@@ -46,7 +46,7 @@
         $gender = $_POST["gender"];
         $preferredgender = $_POST["preferredgender"];
     }
-    
+
     InsertQuery("INSERT INTO Person (person_firstname, person_lastname, person_age, person_gender, person_preferred_gender) VALUES ('$firstname', '$lastname', '$age', '$gender', '$preferredgender')");
     ?>
 </body>

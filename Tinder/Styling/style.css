@@ -13,7 +13,6 @@ padding: 15px;
 #buttoncontainer {
     font-size: 15px;
     background-color: pink;
-    color: black;
     border: 1px solid black;
     font-family:'Times New Roman', Times, serif;
     padding: 10px;
@@ -117,6 +116,7 @@ input[type=submit] {
 }
 .swiped {
 text-align: center;
+font-size: 20px;
 background-color: pink;
 color: black;
 border: 1px solid black;
@@ -147,5 +147,15 @@ padding: 15px;
 
 #rated {
     font-family: 'Times New Roman', Times, serif;
+}
 
+.container-sign {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid pink;
+}
+
+#signin {
+    font-family: 'Times New Roman', Times, serif;
 }

@@ -7,16 +7,32 @@
     <link  rel="stylesheet" href="./styling/style.css" type="text/css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header + database include-->
     <?php 
-    include "./Includes/Header.php"; ?>
+    include "./Includes/Header.php"; 
+    include "./Includes/database.php"; ?>
+    <!-- Check sign in -->
+    <?php
+    
+    $username = $_POST["firstname"];
+    $user = GetQuery("SELECT * FROM Person WHERE person_firstname = '$username'");
 
+    if ($user == NULL) {
+        header("Location: Account.php"); 
+        exit();
+    }
+    foreach ($user as $user) {
+        $userfirstname = $user["person_firstname"];
+        $userlastname = $user["person_lastname"];
+        $usergender = $user["person_gender"];
+        $userprefgender = $user["person_preferred_gender"];
+        
+    }
+    ?>
     <!-- Database input -->
     <?php 
-    
-    include "./Includes/database.php";
-    
-    $people = GetQuery("SELECT * FROM Person"); 
+    $people = GetQuery("SELECT * FROM Person WHERE person_firstname != '$userfirstname' AND  person_gender = '$userprefgender' AND person_preferred_gender = '$usergender'");
+    // WHERE person_gender = 'Male' AND person_preferred_gender = 'Female'
 
     foreach ($people as $person) {
     ?>

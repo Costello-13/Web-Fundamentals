@@ -38,6 +38,10 @@ document.querySelector("#swipebuttons").addEventListener("click", function() {
     document.querySelectorAll(".jsprefgender")[index].style.display = "block";
 });
 
+var user_exist = "<?php echo $checkuser ;?>";
+
+console.log(user_exist);
+
 
 
 
