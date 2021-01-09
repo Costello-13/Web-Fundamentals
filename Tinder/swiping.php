@@ -5,28 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swippity Swoppity</title>
     <link  rel="stylesheet" href="./styling/style.css" type="text/css">
+    <script
+			  src="https://code.jquery.com/jquery-3.5.1.min.js"
+			  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			  crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header + database include-->
     <?php 
     include "./Includes/Header.php"; 
     include "./Includes/database.php"; ?>
+    
     <!-- Check sign in -->
     <?php
     
     $username = $_POST["firstname"];
-    $user = GetQuery("SELECT * FROM Person WHERE person_firstname = '$username'");
+    $user = GetQuery("SELECT * FROM Person WHERE person_firstname = '$username';");
 
     if ($user == NULL) {
         header("Location: Account.php"); 
         exit();
     }
+    // Information current user
     foreach ($user as $user) {
         $userfirstname = $user["person_firstname"];
         $userlastname = $user["person_lastname"];
         $usergender = $user["person_gender"];
-        $userprefgender = $user["person_preferred_gender"];
-        
+        $userprefgender = $user["person_preferred_gender"]; 
     }
     ?>
     <!-- Database input -->
@@ -35,30 +40,29 @@
     // WHERE person_gender = 'Male' AND person_preferred_gender = 'Female'
 
     foreach ($people as $person) {
+       
     ?>
-    <!-- Database content -->
+    <!-- Database possible matches -->
     <div id="containerswipe" class="js-swipe">
-    <h1 class="jsfirstname jsswipe">
-        <?php echo $person["person_firstname"]; ?>
-    </h1>
+        <h1 class="jsfirstname jsswipe">
+            <?php echo $person["person_firstname"]; ?>
+        </h1>
    
-    <h2 class="jsage jsswipe">
-        <?php echo $person["person_age"] . " " ."years old"; ?>
-    </h2>
-    <h2 class="jsgender jsswipe">
-        <?php echo "Gender: " . $person["person_gender"]; ?>
-    </h2>
-    <h2 class="jsprefgender jsswipe">
-        <?php echo "Preferred gender: " . $person["person_preferred_gender"]; ?>
-    </h2>
-    
-    <?php } 
-    ?>
+        <h2 class="jsage jsswipe">
+            <?php echo $person["person_age"] . " " ."years old"; ?>
+        </h2>
+        <h2 class="jsgender jsswipe">
+            <?php echo "Gender: " . $person["person_gender"]; ?>
+        </h2>
+        <h2 class="jsprefgender jsswipe">
+            <?php echo "Preferred gender: " . $person["person_preferred_gender"]; ?>
+        </h2>
+        <?php } ?>
     </div>
     <br/>
     <br/>
     <br/>
-    
+
     <!-- Swipe buttons -->
     <div id="swipebuttons">
         <button class="swiped" id="dislike">
@@ -68,11 +72,12 @@
             Yes please!
         </button>
     </div>
-
+    </form>
     <!-- Footer -->
     <?php 
-    include "./Includes/Footer.php"?>
+    include "./Includes/Footer.php";?>
 
     <script src="./Assets/index.js"> </script>
+
 </body>
 </html>
